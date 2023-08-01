@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import LoginForm from "./LoginForm";
+import Profile from './Profile';
+import Admin from './Admin';
+import Dashboard from './Dashboard';
+import Transaction from './Transaction';
+import Credit from './Credit';
+import Debit from './Debit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <div className="App">
+      <Routes>
+    
+      <Route exact path="/loginform" element={<LoginForm/>}></Route>
+      <Route exact path="/profile" element={<Profile/>}></Route>
+      <Route exact path="/admin" element={<Admin/>}></Route>
+      <Route exact path="/dashboard" element={<Dashboard/>}></Route>
+      <Route exact path="/transaction" element={<Transaction/>}></Route>
+      <Route exact path="/credit" element={<Credit/>}></Route>
+      <Route exact path="/debit" element={<Debit/>}></Route>
+      </Routes>
+      
     </div>
+    </BrowserRouter>
+    
   );
 }
 
